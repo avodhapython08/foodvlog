@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Jof</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'hm/css/bootstrap.min.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'hm/css/style.css' %}">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="{% static 'hm/css/responsive.css' %}">
+    <!-- fevicon -->
+    <link rel="icon" href="{% static 'hm/images/fevicon.png' %}" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="{% static 'hm/css/jquery.mCustomScrollbar.min.css' %}">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+
+</head>
+<!-- body -->
+
+<body class="main-layout">
+
+
+    <div id="fruits" class="section dark_bg layout_padding left_white">
+        <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                    <div class="heading full text_align_center">
+                        <h2 class="white_font full text_align_center">Our Fruits</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" >
+                {% for i in pr %}
+                <div class="col-md-4 margin_top_30">
+                    <div class="full fr">
+                        <a href="{{i.get_url}}" ><img class="img-responsive"  src="{{i.img.url}}" alt="#" style="width300px;height:300px;"/></a>
+                    </div>
+                    <div class="full text_align_center">
+                        <h4 class="white_font">{{i.name}}<br><strong class="theme_blue">{{i.desc|truncatewords:8}}</strong></h4>
+                         <br>
+                        <h4 class="white_font">Price: {{i.price}} Rs</h4><br>
+                        <h4 class="white_font">Stock left: {{i.stock}}</h4>
+
+                    </div>
+
+               </div>
+                {% endfor %}
+            </div>
+
+
+            </div>
+
+        </div>
+
+
+                <!-- <div class="col-md-4 margin_top_30">
+                    <div class="full fr">
+                        <img class="img-responsive" src="{% static 'hm/images/f2.png' %}" alt="#" />
+                    </div>
+                    <div class="full text_align_center">
+                        <h3 class="white_font">Pineapple<br><strong class="theme_blue">Fresh Fruit</strong></h3>
+                    </div>
+                </div>
+                <div class="col-md-4 margin_top_30">
+                    <div class="full fr">
+                        <img class="img-responsive" src="{% static 'hm/images/f3.png' %}" alt="#" />
+                    </div>
+                    <div class="full text_align_center">
+                        <h3 class="white_font">Bananas<br><strong class="theme_blue">Fresh Fruit</strong></h3>
+                    </div> -->
+
+    <!-- end section -->
+    <!-- section -->
+
+
+
+
+
+    <!-- end footer -->
+    <!-- Javascript files-->
+    <script src="{% static 'hm/js/jquery.min.js' %}"></script>
+    <script src="{% static 'hm/js/popper.min.js' %}"></script>
+    <script src="{% static 'hm/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'hm/js/jquery-3.0.0.min.js' %}"></script>
+    <script src="{% static 'hm/js/plugin.js' %}"></script>
+
+    <!-- sidebar -->
+    <script src="{% static 'hm/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'hm/js/custom.js' %}"></script>
+</body>
+
+</html>
+{% endblock %}
